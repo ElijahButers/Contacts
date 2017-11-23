@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
+    let names = ["Amy", "Bill", "Zack", "Steve", "Jack"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +25,14 @@ class ViewController: UITableViewController {
     
     // MARK: -  TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return names.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = "Something"
+        let name = self.names[indexPath.row]
+        cell.textLabel?.text = name
         return cell
     }
 

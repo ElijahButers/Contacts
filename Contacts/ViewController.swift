@@ -18,6 +18,8 @@ class ViewController: UITableViewController {
         
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
     // MARK: -  TableView

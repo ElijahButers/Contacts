@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
     let names = ["Amy", "Bill", "Zack", "Steve", "Jack"]
+    let cNames = ["Carl", "Chris", "Christina", "Cameron"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

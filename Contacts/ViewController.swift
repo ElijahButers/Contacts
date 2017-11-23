@@ -36,6 +36,18 @@ class ViewController: UITableViewController {
         cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
         return cell
     }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel()
+        label.text = "Header"
+        label.backgroundColor = UIColor.lightGray
+        return label
+    }
 
 
 }

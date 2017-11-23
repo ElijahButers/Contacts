@@ -33,6 +33,7 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let name = self.names[indexPath.row]
         cell.textLabel?.text = name
+        cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
         return cell
     }
 

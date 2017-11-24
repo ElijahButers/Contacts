@@ -11,8 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
-    let names = ["Amy", "Bill", "Zack", "Steve", "Jack"]
-    let cNames = ["Carl", "Chris", "Christina", "Cameron"]
+    let twoDimensionalArray = ["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

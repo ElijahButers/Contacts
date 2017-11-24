@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
-    let twoDimensionalArray = ["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]
+    let twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +26,20 @@ class ViewController: UITableViewController {
     // MARK: -  TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if section == 0 {
-            return names.count
-        }
-        return cNames.count
+        return twoDimensionalArray[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let name = indexPath.section == 0 ? names[indexPath.row] : cNames[indexPath.row]
+        let name = twoDimensionalArray[indexPath.section][indexPath.row]
         cell.textLabel?.text = name
         cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
         return cell
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return twoDimensionalArray.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

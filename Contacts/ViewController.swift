@@ -17,6 +17,8 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "ShowIndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
+        
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
         

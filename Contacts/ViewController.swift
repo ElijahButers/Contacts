@@ -28,6 +28,8 @@ class ViewController: UITableViewController {
     @objc func handleShowIndexPath() {
         print("Attempting reload animation of indexPaths...")
         
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .right)
     }
     
     // MARK: -  TableView

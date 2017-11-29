@@ -25,6 +25,11 @@ class ViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
     }
     
+    @objc func handleShowIndexPath() {
+        print("Attempting reload animation of indexPaths...")
+        
+    }
+    
     // MARK: -  TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

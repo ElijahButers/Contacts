@@ -38,7 +38,10 @@ class ViewController: UITableViewController {
                     indexPathsToReload.append(indexPath)
                 }
         }
-        tableView.reloadRows(at: indexPathsToReload, with: .right)
+        showIndexPath = !showIndexPath
+        
+        let animationStyle = showIndexPath ? UITableViewRowAnimation.right : .left
+        tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
     
     // MARK: -  TableView

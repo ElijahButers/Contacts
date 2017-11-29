@@ -30,10 +30,14 @@ class ViewController: UITableViewController {
         var indexPathsToReload = [IndexPath]()
         
         // build all the indexParths to reload
-        for index in twoDimensionalArray[0].indices {
-            let indexPath = IndexPath(row: index, section: 0)
-            indexPathsToReload.append(indexPath)
+            for section in twoDimensionalArray.indices {
+                for row in twoDimensionalArray[section].indices {
+                    print(section, row)
+                    let indexPath = IndexPath(row: row, section: section)
+                    indexPathsToReload.append(indexPath)
+                }
         }
+        
         tableView.reloadRows(at: indexPathsToReload, with: .right)
     }
     

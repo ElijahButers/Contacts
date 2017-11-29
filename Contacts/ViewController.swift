@@ -12,6 +12,7 @@ class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
     let twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
+    var showIndexPath = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +38,6 @@ class ViewController: UITableViewController {
                     indexPathsToReload.append(indexPath)
                 }
         }
-        
         tableView.reloadRows(at: indexPathsToReload, with: .right)
     }
     

@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
     let twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
-    var showIndexPath = false
+    var     showIndexPath = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,10 @@ class ViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         let name = twoDimensionalArray[indexPath.section][indexPath.row]
         cell.textLabel?.text = name
-        cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
+        
+        if showIndexPath {
+            cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
+        }
         return cell
     }
     

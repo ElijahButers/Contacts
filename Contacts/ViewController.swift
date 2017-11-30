@@ -68,10 +68,10 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let label = UILabel()
-        label.text = "Header"
-        label.backgroundColor = UIColor.lightGray
-        return label
+        let button = UIButton(type: .system)
+        button.setTitle("Close", for: .normal)
+        
+        return button
     }
 
 

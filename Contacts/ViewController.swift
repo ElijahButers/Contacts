@@ -44,10 +44,10 @@ class ViewController: UITableViewController {
         tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
     
-    @objc func handleExpandClose() {
+    @objc func handleExpandClose(button: UIButton) {
         print("Trying to expand and close section...")
         
-        let section = 0
+        let section = button.tag
         var indexPaths = [IndexPath]()
         for row in twoDimensionalArray[section].indices {
             print(0, row)
@@ -87,6 +87,7 @@ class ViewController: UITableViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .yellow
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.tag = section
         
         button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
         return button

@@ -44,6 +44,10 @@ class ViewController: UITableViewController {
         tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
     
+    @objc func handleExpandClose() {
+        print("Trying to expand and close section...")
+    }
+    
     // MARK: -  TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         

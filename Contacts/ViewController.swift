@@ -74,6 +74,7 @@ class ViewController: UITableViewController {
         button.backgroundColor = .yellow
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
         return button
     }
     

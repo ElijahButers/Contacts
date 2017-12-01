@@ -70,6 +70,9 @@ class ViewController: UITableViewController {
         
         let button = UIButton(type: .system)
         button.setTitle("Close", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .yellow
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         
         return button
     }

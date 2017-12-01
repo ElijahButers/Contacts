@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
-    let twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
+    var twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
     var     showIndexPath = false
 
     override func viewDidLoad() {
@@ -46,6 +46,16 @@ class ViewController: UITableViewController {
     
     @objc func handleExpandClose() {
         print("Trying to expand and close section...")
+        
+        let section = 0
+        var indexPaths = [IndexPath]()
+        for row in twoDimensionalArray[section].indices {
+            print(0, row)
+            let indexPath = IndexPath(row: row, section: section)
+            indexPaths.append(indexPath)
+        }
+        twoDimensionalArray[section].removeAll()
+        tableView.deleteRows(at: indexPaths, with: .fade)
     }
     
     // MARK: -  TableView

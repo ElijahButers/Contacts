@@ -59,6 +59,7 @@ class ViewController: UITableViewController {
         
         let isExpanded = twoDimensionalArray[section].isExpanded
         twoDimensionalArray[section].isExpanded = !isExpanded
+        button.setTitle(isExpanded ? "Open" : "Close", for: .normal)
         
         if isExpanded {
             tableView.deleteRows(at: indexPaths, with: .fade)

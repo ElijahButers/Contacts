@@ -65,6 +65,10 @@ class ViewController: UITableViewController {
     // MARK: -  TableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
+        if !twoDimensionalArray[section].isExpanded {
+            return 0
+        }
+        
         return twoDimensionalArray[section].names.count
     }
     

@@ -56,7 +56,9 @@ class ViewController: UITableViewController {
             let indexPath = IndexPath(row: row, section: section)
             indexPaths.append(indexPath)
         }
-        twoDimensionalArray[section].names.removeAll()
+        // twoDimensionalArray[section].names.removeAll()
+        let isExpanded = twoDimensionalArray[section].isExpanded
+        twoDimensionalArray[section].isExpanded = !isExpanded
         tableView.deleteRows(at: indexPaths, with: .fade)
     }
     

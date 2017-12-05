@@ -11,8 +11,10 @@ import UIKit
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
-    var twoDimensionalArray = [["Amy", "Bill", "Zack", "Steve", "Jack"], ["Carl", "Chris", "Christina", "Cameron"], ["David", "Dan"]]
-    var     showIndexPath = false
+    var twoDimensionalArray = [ExpandableNames(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack"]),
+                                              ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
+                                                              ExpandableNames(isExpanded: true, names: ["David", "Dan"])]
+    var showIndexPath = false
 
     override func viewDidLoad() {
         super.viewDidLoad()

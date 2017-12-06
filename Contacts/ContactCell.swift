@@ -23,6 +23,10 @@ class ContactCell: UITableViewCell {
         accessoryView = startButton
     }
     
+    @objc private func handleMarkAsFavorite() {
+        print("Marking as favorite")
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

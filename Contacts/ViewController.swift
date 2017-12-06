@@ -29,6 +29,10 @@ class ViewController: UITableViewController {
         tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
     }
     
+    func someMethodIWantToCall(cell: UITableViewCell) {
+        print("Inside of ViewController now...")
+    }
+    
     @objc func handleShowIndexPath() {
         print("Attempting reload animation of indexPaths...")
         var indexPathsToReload = [IndexPath]()

@@ -30,7 +30,13 @@ class ViewController: UITableViewController {
     }
     
     func someMethodIWantToCall(cell: UITableViewCell) {
-        print("Inside of ViewController now...")
+        // print("Inside of ViewController now...")
+        
+        // we're going to figure out which name we're clicking on
+        let indexPathTapped =  tableView.indexPath(for: cell)
+        print(indexPathTapped)
+        let contact = twoDimensionalArray[indexPathTapped!.section].names[indexPathTapped!.row]
+        print(contact)
     }
     
     @objc func handleShowIndexPath() {

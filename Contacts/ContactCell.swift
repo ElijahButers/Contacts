@@ -12,6 +12,8 @@ class ContactCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {

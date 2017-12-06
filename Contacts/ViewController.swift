@@ -25,7 +25,7 @@ class ViewController: UITableViewController {
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
     }
     
     @objc func handleShowIndexPath() {

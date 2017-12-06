@@ -10,6 +10,8 @@ import UIKit
 
 class ContactCell: UITableViewCell {
     
+    var link: ViewController?
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         

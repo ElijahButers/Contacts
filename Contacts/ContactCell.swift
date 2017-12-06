@@ -27,6 +27,7 @@ class ContactCell: UITableViewCell {
     
     @objc private func handleMarkAsFavorite() {
         print("Marking as favorite")
+        link?.someMethodIWantToCall(cell: self)
     }
     
     required init?(coder aDecoder: NSCoder) {

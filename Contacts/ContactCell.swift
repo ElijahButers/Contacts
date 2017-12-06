@@ -18,6 +18,8 @@ class ContactCell: UITableViewCell {
         startButton.setImage(#imageLiteral(resourceName: "fav_star"), for: .normal)
         startButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         startButton.tintColor = .red
+        
+        startButton.addTarget(self, action: #selector(handleMarkAsFavorite), for: .touchUpInside)
         accessoryView = startButton
     }
     

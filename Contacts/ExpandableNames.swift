@@ -13,3 +13,9 @@ struct ExpandableNames {
     var isExpanded: Bool
     let names: [String]
 }
+
+struct Contact {
+    
+    let names: [String]
+    var hasFavorited: Bool
+}

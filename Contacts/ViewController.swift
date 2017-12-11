@@ -37,6 +37,9 @@ class ViewController: UITableViewController {
         print(indexPathTapped)
         let contact = twoDimensionalArray[indexPathTapped!.section].names[indexPathTapped!.row]
         print(contact)
+        
+        let hasFavorited = contact.hasFavorited
+        twoDimensionalArray[indexPathTapped!.section].names[indexPathTapped!.row].hasFavorited = !hasFavorited
     }
     
     @objc func handleShowIndexPath() {

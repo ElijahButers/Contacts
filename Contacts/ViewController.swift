@@ -99,6 +99,7 @@ class ViewController: UITableViewController {
         cell.link = self
         let contact = twoDimensionalArray[indexPath.section].names[indexPath.row]
         cell.textLabel?.text = contact.name
+        cell.accessoryView?.tintColor = contact.hasFavorited ? UIColor.red : .lightGray
         
         if showIndexPath {
             cell.textLabel?.text  = "\(contact.name) Section: \(indexPath.section) Row: \(indexPath.row)"

@@ -14,7 +14,7 @@ class ViewController: UITableViewController {
     var twoDimensionalArray = [
             // ExpandableNames(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack"]),
             // ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"]),
-            ExpandableNames(isExpanded: true, names: [Contact(names: "Dan", hasFavorited: false)])]
+            ExpandableNames(isExpanded: true, names: [Contact(name: "Dan", hasFavorited: false)])]
     var showIndexPath = false
 
     override func viewDidLoad() {
@@ -93,11 +93,11 @@ class ViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
         cell.link = self
-        let name = twoDimensionalArray[indexPath.section].names[indexPath.row]
-        cell.textLabel?.text = name
+        let contact = twoDimensionalArray[indexPath.section].names[indexPath.row]
+        cell.textLabel?.text = contact.name
         
         if showIndexPath {
-            cell.textLabel?.text  = "\(name) Section: \(indexPath.section) Row: \(indexPath.row)"
+            cell.textLabel?.text  = "\(contact.name) Section: \(indexPath.section) Row: \(indexPath.row)"
         }
         return cell
     }

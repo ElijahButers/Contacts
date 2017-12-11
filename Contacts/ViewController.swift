@@ -40,6 +40,7 @@ class ViewController: UITableViewController {
         
         let hasFavorited = contact.hasFavorited
         twoDimensionalArray[indexPathTapped!.section].names[indexPathTapped!.row].hasFavorited = !hasFavorited
+        tableView.reloadRows(at: [indexPathTapped!], with: .fade)
     }
     
     @objc func handleShowIndexPath() {

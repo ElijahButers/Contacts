@@ -28,6 +28,7 @@ class ViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(ContactCell.self, forCellReuseIdentifier: cellId)
+        fetchContacts()
     }
     
     func someMethodIWantToCall(cell: UITableViewCell) {
@@ -82,6 +83,10 @@ class ViewController: UITableViewController {
         } else {
             tableView.insertRows(at: indexPaths, with: .fade)
         }
+    }
+    
+    private func fetchContacts() {
+        print("Attempting to fetch contacts today...")
     }
     
     // MARK: -  TableView

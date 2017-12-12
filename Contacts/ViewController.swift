@@ -87,6 +87,21 @@ class ViewController: UITableViewController {
     
     private func fetchContacts() {
         print("Attempting to fetch contacts today...")
+        
+        let store = CNContactStore()
+        
+        store.requestAccess(for: .contacts) { (granted, err) in
+            if let err = err {
+                print("Failed to request access:", err)
+                return
+            }
+            
+            if granted {
+                print("Access granted.")
+            } else {
+                print("Access denied.")
+            }
+        }
     }
     
     // MARK: -  TableView

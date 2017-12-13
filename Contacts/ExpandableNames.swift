@@ -17,6 +17,6 @@ struct ExpandableNames {
 
 struct Contact {
     
-    let name: String
+    let contact: CNContact
     var hasFavorited: Bool
 }

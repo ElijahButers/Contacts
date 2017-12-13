@@ -98,6 +98,20 @@ class ViewController: UITableViewController {
             
             if granted {
                 print("Access granted.")
+                
+                let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
+                let request = CNContactFetchRequest(keysToFetch: keys as[CNKeyDescriptor])
+                
+                do {
+                    try store.enumerateContacts(with: request, usingBlock: { (contact, stopPointerIfYouWantToStopEnumerating) in
+                        
+                        print(contact.givenName)
+                        print(contact.familyName)
+                        print(contact.phoneNumbers.first?.value.stringValue ?? " ")
+                    })
+                } catch let err {
+                    print("Failed to enumerate contacts:", err)
+                }
             } else {
                 print("Access denied.")
             }

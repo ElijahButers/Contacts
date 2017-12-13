@@ -12,10 +12,11 @@ import Contacts
 class ViewController: UITableViewController {
     
     let cellId = "cellId123123"
-    var twoDimensionalArray = [
-        ExpandableNames(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack"].map{ Contact(name: $0, hasFavorited: false) }),
-        ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"].map{ Contact(name: $0, hasFavorited: false) }),
-            ExpandableNames(isExpanded: true, names: [Contact(name: "Dan", hasFavorited: false)])]
+    var twoDimensionalArray = [ExpandableNames]()
+//    var twoDimensionalArray = [
+//        ExpandableNames(isExpanded: true, names: ["Amy", "Bill", "Zack", "Steve", "Jack"].map{ Contact(name: $0, hasFavorited: false) }),
+//        ExpandableNames(isExpanded: true, names: ["Carl", "Chris", "Christina", "Cameron"].map{ Contact(name: $0, hasFavorited: false) }),
+//            ExpandableNames(isExpanded: true, names: [Contact(name: "Dan", hasFavorited: false)])]
     var showIndexPath = false
 
     override func viewDidLoad() {

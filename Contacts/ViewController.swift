@@ -137,12 +137,12 @@ class ViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
         cell.link = self
-        let contact = twoDimensionalArray[indexPath.section].names[indexPath.row]
-        cell.textLabel?.text = contact.name
-        cell.accessoryView?.tintColor = contact.hasFavorited ? UIColor.red : .lightGray
+        let favoritableContact = twoDimensionalArray[indexPath.section].names[indexPath.row]
+        cell.textLabel?.text = favoritableContact.contact.givenName
+        cell.accessoryView?.tintColor = favoritableContact.hasFavorited ? UIColor.red : .lightGray
         
         if showIndexPath {
-            cell.textLabel?.text  = "\(contact.name) Section: \(indexPath.section) Row: \(indexPath.row)"
+            cell.textLabel?.text  = "\(favoritableContact.contact.givenName) Section: \(indexPath.section) Row: \(indexPath.row)"
         }
         return cell
     }

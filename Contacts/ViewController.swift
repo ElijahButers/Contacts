@@ -100,6 +100,8 @@ class ViewController: UITableViewController {
             if granted {
                 print("Access granted.")
                 
+                var favoritableContacts = [FavoritableContact]()
+                
                 let keys = [CNContactGivenNameKey, CNContactFamilyNameKey, CNContactPhoneNumbersKey]
                 let request = CNContactFetchRequest(keysToFetch: keys as[CNKeyDescriptor])
                 
@@ -109,6 +111,8 @@ class ViewController: UITableViewController {
                         print(contact.givenName)
                         print(contact.familyName)
                         print(contact.phoneNumbers.first?.value.stringValue ?? " ")
+                        
+                        favoritableContacts.append(FavoritableContact(contact: contact, hasFavorited: false))
                     })
                 } catch let err {
                     print("Failed to enumerate contacts:", err)

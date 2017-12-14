@@ -135,10 +135,12 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! ContactCell
+        let cell = ContactCell(style: .subtitle, reuseIdentifier: cellId)
         cell.link = self
         let favoritableContact = twoDimensionalArray[indexPath.section].names[indexPath.row]
-        cell.textLabel?.text = favoritableContact.contact.givenName
+        cell.textLabel?.text = favoritableContact.contact.givenName + " " + favoritableContact.contact.familyName
+        cell.detailTextLabel?.text = favoritableContact.contact.phoneNumbers.first?.value.stringValue
         cell.accessoryView?.tintColor = favoritableContact.hasFavorited ? UIColor.red : .lightGray
         
         if showIndexPath {
